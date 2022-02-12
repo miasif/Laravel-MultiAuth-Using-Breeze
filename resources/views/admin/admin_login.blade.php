@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="">
       <meta name="author" content="">
-      {{asset('')}}
+
       <link rel="icon" href="{{asset('panel/assets/images/favicon.png')}}" >
       <!--Page title-->
       <title>Admin easy Learning</title>
@@ -24,7 +24,7 @@
    <body id="page-top">
       <!-- preloader -->
       <div class="preloader">
-         <img src="{{asset('panel/assets/images/preloader.gif')}}" alt="">
+         <!-- <img src="{{asset('panel/assets/images/preloader.gif')}}" alt=""> -->
       </div>
       <!-- wrapper -->
       <div class="wrapper without_header_sidebar">
@@ -34,7 +34,7 @@
             <div class="login_page center_container">
                <div class="center_content">
                   <div class="logo">
-                     <img src="{{asset('panel/assets/images/logo.png')}}" alt="" class="img-fluid">
+                     <!-- <img src="{{asset('panel/assets/images/logo.png')}}" alt="" class="img-fluid"> -->
                   </div>
                   @if(Session::has('error'))
                   <div class="alert alert-warning d-flex align-items-center" role="alert">
@@ -70,9 +70,7 @@
                         <button type="submit" class="btn btn-blue">Login</button>
                      </div>
                   </form>
-                  <div class="footer">
-                     <p>Copyright &copy; 2020 <a href="https://easylearningbd.com/">easy Learning</a>. All rights reserved.</p>
-                  </div>
+
                </div>
             </div>
          </div>

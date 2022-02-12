@@ -23,7 +23,7 @@
    <body id="page-top">
       <!-- preloader -->
       <div class="preloader">
-         <img src="{{asset('panel/assets/images/preloader.gif')}}" alt="">
+         <!-- <img src="{{asset('panel/assets/images/preloader.gif')}}" alt=""> -->
       </div>
       <div class="wrapper without_header_sidebar">
          <!-- contnet wrapper -->
@@ -32,7 +32,7 @@
             <div class="registration_page center_container">
                <div class="center_content">
                   <div class="logo">
-                     <img src="{{asset('panel/assets/images/logo.png')}}" alt="" class="img-fluid">
+                     <!-- <img src="{{asset('panel/assets/images/logo.png')}}" alt="" class="img-fluid"> -->
                   </div>
                   <form action="{{route('admin.register.create')}}" method="post">
                       @csrf
@@ -61,9 +61,7 @@
                         <button type="submit" class="btn btn-blue">Signup</button>
                      </div>
                   </form>
-                  <div class="footer">
-                     <p>Copyright &copy; 2020 <a href="https://easylearningbd.com/">easy Learning</a>. All rights reserved.</p>
-                  </div>
+
                </div>
             </div>
          </div>
