@@ -5,6 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="">
       <meta name="author" content="">
+
       <link rel="icon" href="{{asset('panel/assets/images/favicon.png')}}" >
       <!--Page title-->
       <title>Admin easy Learning</title>
@@ -25,40 +26,48 @@
       <div class="preloader">
          <!-- <img src="{{asset('panel/assets/images/preloader.gif')}}" alt=""> -->
       </div>
+      <!-- wrapper -->
       <div class="wrapper without_header_sidebar">
          <!-- contnet wrapper -->
          <div class="content_wrapper">
             <!-- page content -->
-            <div class="registration_page center_container">
+            <div class="login_page center_container">
                <div class="center_content">
                   <div class="logo">
                      <!-- <img src="{{asset('panel/assets/images/logo.png')}}" alt="" class="img-fluid"> -->
                   </div>
-                  <form action="{{route('admin.register.create')}}" method="post">
-                      @csrf
-                     <div class="form-group icon_parent">
-                        <label for="uname">Username</label>
-                        <input id="name" type="text" class="form-control" name="name" placeholder="Full Name" required>
-                        <span class="icon_soon_bottom_right"><i class="fas fa-user"></i></span>
+                  @if(Session::has('error'))
+                  <div class="alert alert-warning d-flex align-items-center" role="alert">
+                     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+                        <use xlink:href="#exclamation-triangle-fill"/>
+                     </svg>
+                     <div>
+                        {{session::get('error')}}
                      </div>
+                  </div>
+                  @endif
+                  <form action="{{route('seller.login')}}" class="d-block" method="post">
+                  @csrf
                      <div class="form-group icon_parent">
-                        <label for="email">E-mail</label>
-                        <input  type="email" class="form-control" name="email" placeholder="Email Address">
+                        <label for="password">Email</label>
+                        <input id="email" type="email" class="form-control"  name="email" placeholder="Email Address">
                         <span class="icon_soon_bottom_right"><i class="fas fa-envelope"></i></span>
                      </div>
                      <div class="form-group icon_parent">
                         <label for="password">Password</label>
-                        <input  type="password" class="form-control" name="password" placeholder="Password">
-                        <span class="icon_soon_bottom_right"><i class="fas fa-unlock"></i></span>
-                     </div>
-                     <div class="form-group icon_parent">
-                        <label for="rtpassword">Re-type Password</label>
-                        <input  type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
+                        <input  type="password" class="form-control"   name="password" placeholder="Password">
                         <span class="icon_soon_bottom_right"><i class="fas fa-unlock"></i></span>
                      </div>
                      <div class="form-group">
-                        <a class="registration" href=" ">Already have an account</a><br>
-                        <button type="submit" class="btn btn-blue">Signup</button>
+                        <label class="chech_container">Remember me
+                        <input type="checkbox" name="remember" id="remember" >
+                        <span class="checkmark"></span>
+                        </label>
+                     </div>
+                     <div class="form-group">
+                        <a class="registration" href="{{route('seller.register')}}">Create new account</a><br>
+                        <a href=" " class="text-white">I forgot my password</a>
+                        <button type="submit" class="btn btn-blue">Login</button>
                      </div>
                   </form>
 
